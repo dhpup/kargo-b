@@ -13,7 +13,7 @@ spec:
     metadata:
       name: app-a-non-prod-{{stage}}
       annotations:
-        kargo.akuity.io/authorized-stage: {{stage}}
+        kargo.akuity.io/authorized-stage: app-a-non-prod:{{stage}}
     spec:
       project: kargo-b-demo
       source:
