@@ -33,6 +33,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
+  shard: kargo-agent
   subscriptions:
     warehouse: app-a
   promotionMechanisms:
