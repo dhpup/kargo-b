@@ -55,8 +55,9 @@ metadata:
   namespace: app-a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+  labels:
+    kargo.akuity.io/shard: kargo-agent
 spec:
-  shard: kargo-agent
   subscriptions:
     upstreamStages:
     - name: dev
@@ -82,8 +83,9 @@ metadata:
   namespace: app-a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+  labels:
+    kargo.akuity.io/shard: kargo-agent
 spec:
-  shard: kargo-agent
   subscriptions:
     upstreamStages:
     - name: uat
@@ -106,8 +108,9 @@ metadata:
   namespace: app-a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+  labels:
+    kargo.akuity.io/shard: kargo-agent
 spec:
-  shard: kargo-agent
   subscriptions:
     upstreamStages:
     - name: region-a-cluster-01
@@ -130,8 +133,9 @@ metadata:
   namespace: app-a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+  labels:
+    kargo.akuity.io/shard: kargo-agent
 spec:
-  shard: kargo-agent
   subscriptions:
     upstreamStages:
     - name: region-a-cluster-01
@@ -154,8 +158,9 @@ metadata:
   namespace: app-a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+  labels:
+    kargo.akuity.io/shard: kargo-agent
 spec:
-  shard: kargo-agent
   subscriptions:
     upstreamStages:
     - name: region-a-cluster-02
@@ -168,8 +173,9 @@ metadata:
   namespace: app-a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+  labels:
+    kargo.akuity.io/shard: kargo-agent
 spec:
-  shard: kargo-agent
   subscriptions:
     upstreamStages:
     - name: region-b
@@ -192,8 +198,9 @@ metadata:
   namespace: app-a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+  labels:
+    kargo.akuity.io/shard: kargo-agent
 spec:
-  shard: kargo-agent
   subscriptions:
     upstreamStages:
     - name: region-b
@@ -216,8 +223,9 @@ metadata:
   namespace: app-a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+  labels:
+    kargo.akuity.io/shard: kargo-agent
 spec:
-  shard: kargo-agent
   subscriptions:
     upstreamStages:
     - name: region-b
