@@ -28,7 +28,7 @@ spec:
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
-  name: non-prod-dev
+  name: dev
   namespace: app-a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
