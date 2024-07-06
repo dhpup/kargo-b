@@ -22,7 +22,7 @@ spec:
         targetRevision: app-a/region-a/{{stage}}
         path: app-a/region-a/{{stage}}
       destination:
-        name: mac1
+        name: mac2
         namespace: app-a-region-a-{{stage}}
       syncPolicy:
         syncOptions:
