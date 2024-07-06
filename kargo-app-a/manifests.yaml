@@ -32,8 +32,6 @@ metadata:
   namespace: app-a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
-  labels:
-    kargo.akuity.io/shard: kargo-agent
 spec:
   subscriptions:
     warehouse: app-a
