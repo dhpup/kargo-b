@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: app-a-non-prod
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - stage: dev
+      - stage: uat
+  template:
+    metadata:
+      name: app-a-non-prod-{{stage}}
+      annotations:
+        kargo.akuity.io/authorized-stage: app-a:{{stage}}
+    spec:
+      project: kargo-b-demo
+      source:
+        repoURL: https://github.com/dhpup/kargo-b.git
+        targetRevision: app-a/non-prod/{{stage}}
+        path: app-a/non-prod/{{stage}}
+      destination:
+        name: mac2
+        namespace: app-a-non-prod-{{stage}}
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
