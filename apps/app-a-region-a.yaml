@@ -14,7 +14,7 @@ spec:
     metadata:
       name: app-a-region-a-{{stage}}
       annotations:
-        kargo.akuity.io/authorized-stage: app-a:region-a-{{stage}}
+        kargo.akuity.io/authorized-stage: app-a-region-a:{{stage}}
     spec:
       project: kargo-b-demo
       source:
