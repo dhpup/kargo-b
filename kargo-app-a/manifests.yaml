@@ -79,9 +79,6 @@ spec:
     argoCDAppUpdates:
     - appName: app-a-non-prod-uat
       appNamespace: argocd
-  verification:
-    analysisTemplates:
-    - name: app-a-verification
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
