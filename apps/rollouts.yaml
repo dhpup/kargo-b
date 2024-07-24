@@ -15,7 +15,7 @@ spec:
              - "true"
   template:
     metadata:
-      name: 'argo-rollouts-{{.name}}'
+      name: 'argo-rollouts'
     spec:
       destination:
         namespace: 'argo-rollouts'
