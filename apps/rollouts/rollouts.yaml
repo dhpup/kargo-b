@@ -23,7 +23,7 @@ spec:
       project: kargo-b-demo
       source:
         repoURL: 'https://github.com/dhpup/kargo-b.git'
-        path: 'apps/rollouts'
+        path: 'config/rollouts'
         targetRevision: 'main'
       syncPolicy:
         automated: {}
