@@ -69,7 +69,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-spec:
   requestedFreight:
   - origin:
       kind: Warehouse
@@ -126,7 +125,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-spec:
   requestedFreight:
   - origin:
       kind: Warehouse
