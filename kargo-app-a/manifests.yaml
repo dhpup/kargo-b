@@ -16,14 +16,6 @@ spec:
     autoPromotionEnabled: true
   - stage: region-a-cluster-03
     autoPromotionEnabled: true
-  - stage: region-b
-    autoPromotionEnabled: true
-  - stage: region-b-cluster-01
-    autoPromotionEnabled: true
-  - stage: region-b-cluster-02
-    autoPromotionEnabled: true
-  - stage: region-b-cluster-03
-    autoPromotionEnabled: true
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Warehouse
@@ -50,8 +42,12 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-  subscriptions:
-    warehouse: app-a
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: app-a
+    sources:
+      direct: true
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/dhpup/kargo-b.git
@@ -73,9 +69,14 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-  subscriptions:
-    upstreamStages:
-    - name: dev
+spec:
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: app-a
+    sources:
+      stages:
+      - dev
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/dhpup/kargo-b.git
@@ -97,9 +98,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-  subscriptions:
-    upstreamStages:
-    - name: uat
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: app-a
+    sources:
+      stages:
+      - uat
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/dhpup/kargo-b.git
@@ -121,9 +126,14 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-  subscriptions:
-    upstreamStages:
-    - name: region-a-cluster-01
+spec:
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: app-a
+    sources:
+      stages:
+      - region-a-cluster-01
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/dhpup/kargo-b.git
@@ -145,9 +155,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-  subscriptions:
-    upstreamStages:
-    - name: region-a-cluster-01
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: app-a
+    sources:
+      stages:
+      - region-a-cluster-01
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/dhpup/kargo-b.git
@@ -169,10 +183,14 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-  subscriptions:
-    upstreamStages:
-    - name: region-a-cluster-02
-    - name: region-a-cluster-03
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: app-a
+    sources:
+      stages:
+      - region-a-cluster-02
+      - region-a-cluster-03
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
@@ -183,9 +201,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-  subscriptions:
-    upstreamStages:
-    - name: region-b
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: app-a
+    sources:
+      stages:
+      - region-b
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/dhpup/kargo-b.git
@@ -207,9 +229,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-  subscriptions:
-    upstreamStages:
-    - name: region-b
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: app-a
+    sources:
+      stages:
+      - region-b
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/dhpup/kargo-b.git
@@ -231,9 +257,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   shard: kargo-agent
-  subscriptions:
-    upstreamStages:
-    - name: region-b
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: app-a
+    sources:
+      stages:
+      - region-b
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/dhpup/kargo-b.git
