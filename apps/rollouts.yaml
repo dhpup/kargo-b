@@ -15,11 +15,11 @@ spec:
              - "true"
   template:
     metadata:
-      name: 'argo-rollouts-mac2'
+      name: 'argo-rollouts-{{.name}}'
     spec:
       destination:
         namespace: 'argo-rollouts'
-        name: 'mac2'
+        name: '{{.name}}'
       project: kargo-b-demo
       source:
         repoURL: 'https://github.com/dhpup/kargo-b.git'
