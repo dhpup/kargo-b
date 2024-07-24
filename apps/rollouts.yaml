@@ -20,7 +20,7 @@ spec:
       destination:
         namespace: 'argo-rollouts'
         name: '{{.name}}'
-      project: kargo-b
+      project: kargo-b-demo
       source:
         repoURL: 'https://github.com/dhpup/kargo-b.git'
         path: 'apps'
