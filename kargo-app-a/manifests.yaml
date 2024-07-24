@@ -16,14 +16,6 @@ spec:
     autoPromotionEnabled: true
   - stage: region-a-cluster-03
     autoPromotionEnabled: true
-  - stage: region-b
-    autoPromotionEnabled: true
-  - stage: region-b-cluster-01
-    autoPromotionEnabled: true
-  - stage: region-b-cluster-02
-    autoPromotionEnabled: true
-  - stage: region-b-cluster-03
-    autoPromotionEnabled: true
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Warehouse
