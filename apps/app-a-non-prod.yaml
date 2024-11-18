@@ -19,7 +19,7 @@ spec:
       source:
         repoURL: https://github.com/dhpup/kargo-b.git
         targetRevision: app-a/non-prod/{{stage}}
-        path: app-a/non-prod/{{stage}}
+        path: ./
       destination:
         name: mac2
         namespace: app-a-non-prod-{{stage}}

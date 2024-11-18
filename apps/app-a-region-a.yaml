@@ -20,7 +20,7 @@ spec:
       source:
         repoURL: https://github.com/dhpup/kargo-b.git
         targetRevision: app-a/region-a/{{stage}}
-        path: app-a/region-a/{{stage}}
+        path: ./
       destination:
         name: mac2
         namespace: app-a-region-a-{{stage}}
