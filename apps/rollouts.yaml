@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argo-rollouts
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - clusters:
+      selector:
+        matchExpressions:
+         - key: argo-rollouts
+           operator: In
+           values:
+             - "true"
+  template:
+    metadata:
+      name: 'argo-rollouts-{{.name}}'
+    spec:
+      destination:
+        namespace: 'argo-rollouts'
+        name: '{{.name}}'
+      project: kargo-b-demo
+      source:
+        repoURL: 'https://github.com/dhpup/kargo-b.git'
+        path: 'config/rollouts'
+        targetRevision: 'main'
+      syncPolicy:
+        automated: {}
+        syncOptions:
+          - CreateNamespace=true
