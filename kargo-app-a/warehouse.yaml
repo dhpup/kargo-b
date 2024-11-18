@@ -1,0 +1,15 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: app-a
+  namespace: app-a
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  shard: kargo-agent
+  subscriptions:
+  - git:
+      repoURL: https://github.com/dhpup/kargo-b.git
+      branch: main
+  - image:
+      repoURL: ghcr.io/dhpup/guestbook
