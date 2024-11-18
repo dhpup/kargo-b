@@ -189,7 +189,7 @@ spec:
       name: app-a
     sources:
       stages:
-      - region-a-cluster-02
+      - region-a-cluster-01
   promotionTemplate:
     spec:
       steps:
@@ -248,7 +248,7 @@ spec:
       name: app-a
     sources:
       stages:
-      - region-a-cluster-03
+      - region-a-cluster-01
   promotionTemplate:
     spec:
       steps:
