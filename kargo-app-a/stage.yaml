@@ -31,7 +31,7 @@ spec:
       - uses: kustomize-set-image
         as: update-image
         config:
-          path: ./src/app-a/base
+          path: ./src/app-a/non-prod/dev
           images:
           - image: ghcr.io/dhpup/guestbook
       - uses: kustomize-build
