@@ -4,8 +4,8 @@ metadata:
   name: app-a
 spec:
   replicas: 1
-  progressDeadlineSeconds: 9
-  revisionHistoryLimit: 4
+  progressDeadlineSeconds: 4
+  revisionHistoryLimit: 6
   selector:
     matchLabels:
       app: app-a
